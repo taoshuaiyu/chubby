@@ -3,7 +3,7 @@
 <mapper namespace="com.ctrlcvs.mapper.UserMapper">
  
   <select id="findUserInfo" resultType="com.ctrlcvs.model.User">
-    select name, age,password from user;
+    select * from user;
   </select>
  
 </mapper>

@@ -14,7 +14,7 @@
 <#include "common/nav.ftl"/>
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">内容主体区域index</div>
+        <div style="padding: 15px;">内容主体区域${name}</div>
     </div>
 <#include "common/footer.ftl"/>
 </div>
