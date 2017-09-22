@@ -9,7 +9,7 @@ import javax.persistence.Table;
 /**
  * Created by zl on 2015/8/27.
  */
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
     @Id
