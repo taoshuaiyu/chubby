@@ -20,7 +20,7 @@ public class RestExceptionHandler {
      */
     @ExceptionHandler
     @ResponseStatus
-    public ApiResult runtimeExceptionHandler(Exception e) {
-        return new ApiResult().error(e.getMessage());
+    public TyResult runtimeExceptionHandler(Exception e) {
+        return new TyResult().error(e.getMessage());
     }
 }

@@ -4,6 +4,7 @@ import com.ctrlcvs.mapper.UserMapper;
 import com.ctrlcvs.model.User;
 import com.ctrlcvs.service.UserService;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
@@ -22,10 +23,10 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public User getUserInfo() {
-        PageHelper.startPage(0, 2);
+    public PageInfo<User> getUserInfo(Integer page,Integer limt) {
+        PageHelper.startPage(page, limt);
         Example example = new Example(User.class);
         List<User> userList = userMapper.selectByExample(example);
-        return userList.get(0);
+        return new PageInfo<>(userList);
     }
 }

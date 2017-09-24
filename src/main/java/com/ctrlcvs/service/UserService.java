@@ -1,6 +1,7 @@
 package com.ctrlcvs.service;
 
 import com.ctrlcvs.model.User;
+import com.github.pagehelper.PageInfo;
 
 /**
  * @author tsy
@@ -9,5 +10,5 @@ import com.ctrlcvs.model.User;
  */
 public interface UserService {
 
-    public User getUserInfo();
+    public PageInfo<User> getUserInfo(Integer page,Integer limit);
 }

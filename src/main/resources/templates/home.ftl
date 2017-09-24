@@ -14,12 +14,15 @@
 <#include "common/nav.ftl"/>
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">内容主体区域${name}</div>
+        <div style="padding: 15px;">管理后台主页</div>
     </div>
 <#include "common/footer.ftl"/>
 </div>
 <script src="../static/layui/layui.js"></script>
 <script>
+    layui.use(['element'], function(){
+        var element = layui.element;
+    });
 </script>
 </body>
 </html>
