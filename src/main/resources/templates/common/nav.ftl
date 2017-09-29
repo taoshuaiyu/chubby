@@ -5,7 +5,7 @@
             <li class="layui-nav-item layui-nav-itemed">
                 <a class="" href="javascript:;">陶小胖</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="javascript:;">发布文章</a></dd>
+                    <dd><a href="/article/publish">发布文章</a></dd>
                     <dd><a href="/article/index">文章管理</a></dd>
                     <dd><a href="javascript:;">文件管理</a></dd>
                     <dd><a href="">超链接</a></dd>
