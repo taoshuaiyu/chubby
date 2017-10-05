@@ -30,4 +30,9 @@ public class RouteController {
     public String category(Model model) {
         return "/category/category";
     }
+
+    @RequestMapping(value = "/file/index", method = RequestMethod.GET)
+    public String file(Model model) {
+        return "/file/file";
+    }
 }

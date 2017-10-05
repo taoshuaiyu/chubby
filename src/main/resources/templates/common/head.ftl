@@ -1,5 +1,5 @@
-<div class="layui-header">
-    <div class="layui-logo">待哥 后台</div>
+<div class="layui-header" id="ayui-header">
+    <div class="layui-logo">闪转腾挪淘小胖 后台</div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
         <li class="layui-nav-item"><a href="">控制台</a></li>
@@ -19,7 +19,7 @@
             <!--/*@thymesVar id="name" type="java.lang.String"*/-->
             <a href="javascript:;">
                 <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                待哥
+                闪转腾挪淘小胖
             </a>
             <dl class="layui-nav-child">
                 <a href="">基本资料</a></dd>
