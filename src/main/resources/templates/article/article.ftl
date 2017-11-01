@@ -16,16 +16,16 @@
         <!-- 内容主体区域 -->
         <div style="color:#7243ff;font-size:20px;padding: 15px;margin-left: 10px;">陶小胖 - 文章管理</div>
         <div style="margin-left: 30px;margin-right: 30px;">
-            <table id="article_table"></table>
+            <table id="article_table" lay-filter="article_bar"></table>
         </div>
         <div id="article_page" style="float: right;margin-right: 30px"></div>
     </div>
 <#include "../common/footer.ftl"/>
 </div>
 <script type="text/html" id="barDemo">
-    <button class="layui-btn layui-btn-small layui-btn-normal"><i class="layui-icon">&#xe642;</i>编辑</button>
-    <button class="layui-btn layui-btn-small layui-btn-danger"><i class="layui-icon">&#xe640;</i>删除</button>
-    <button class="layui-btn layui-btn-small layui-btn-warm"><i class="layui-icon">&#xe756;</i>查看</button>
+    <button class="layui-btn layui-btn-small layui-btn-normal" lay-event="edit"><i class="layui-icon">&#xe642;</i>编辑</button>
+    <button class="layui-btn layui-btn-small layui-btn-danger" lay-event="del"><i class="layui-icon">&#xe640;</i>删除</button>
+    <button class="layui-btn layui-btn-small layui-btn-warm" lay-event="detail"><i class="layui-icon">&#xe756;</i>查看</button>
 </script>
 
 <script src="../../static/layui/layui.js"></script>

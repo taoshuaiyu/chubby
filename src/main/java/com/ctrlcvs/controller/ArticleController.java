@@ -1,7 +1,10 @@
 package com.ctrlcvs.controller;
 
 import com.ctrlcvs.common.TyResult;
+import com.ctrlcvs.model.User;
 import com.ctrlcvs.service.UserService;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +24,9 @@ public class ArticleController {
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public TyResult list(@RequestParam Integer page,@RequestParam Integer limit) {
-        TyResult result = TyResult.success(userService.getUserInfo(page,limit).getList());
-        result.setCount(userService.getUserInfo(page,limit).getTotal());
-        return result;
+    public TyResult list(@RequestParam Integer page, @RequestParam Integer limit) {
+        PageInfo<User> pageInfo = userService.getUserInfo(page, limit);
+        return TyResult.success(pageInfo.getList(), pageInfo.getTotal());
     }
-
 
 }

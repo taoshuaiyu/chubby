@@ -7,7 +7,7 @@ package com.ctrlcvs.common;
  */
 public class TyResult {
 
-    private Integer code; //layui 返回成功code默认为0
+    private Integer code; // layui 返回成功code默认为0
     private String msg;
     private long count;
     private Object data;
@@ -17,18 +17,19 @@ public class TyResult {
         this.msg = resMsg;
     }
 
-    public TyResult(Integer resCode, String resMsg, Object data) {
+    public TyResult(Integer resCode, String resMsg, Object data, long count) {
         this.code = resCode;
         this.msg = resMsg;
         this.data = data;
+        this.count = count;
     }
 
     public TyResult() {
 
     }
 
-    public static TyResult success(Object data) {
-        return new TyResult(0, "成功", data);
+    public static TyResult success(Object data, long count) {
+        return new TyResult(0, "成功", data, count);
     }
 
     public static TyResult error(String msg) {
