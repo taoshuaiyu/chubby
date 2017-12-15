@@ -1,4 +1,4 @@
-package com.ctrlcvs;
+package com.ctrlcvs.mq;
 
 import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
 import com.alibaba.rocketmq.client.consumer.listener.ConsumeOrderlyContext;

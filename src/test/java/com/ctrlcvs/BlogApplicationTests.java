@@ -1,37 +1,16 @@
 package com.ctrlcvs;
 
-import com.alibaba.fastjson.JSONObject;
-import com.ctrlcvs.controller.ArticleController;
-import com.ctrlcvs.model.User;
-import com.ctrlcvs.service.UserService;
-import com.github.pagehelper.PageInfo;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
-import redis.clients.jedis.BinaryClient;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
-
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.stringContainsInOrder;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 // @SpringBootTest(classes = ArticleController.class)
@@ -91,10 +70,6 @@ public class BlogApplicationTests {
 
     @Test
     public void ttt() {
-        Map<String,String> map = new HashMap<>();
-        map.put("xiaotao1","2");
-        map.put("xiaotao2","1");
-        System.out.println(map.get("xiaotao1"));
     }
 
 }
