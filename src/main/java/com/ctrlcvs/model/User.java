@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.List;
 
 /**
  * Created by zl on 2015/8/27.
@@ -28,6 +29,8 @@ public class User {
 
     @Column(name = "portrait_id")
     private Integer portraitId;
+
+    private List<String> list;
 
     public Integer getId() {
         return id;
@@ -67,5 +70,13 @@ public class User {
 
     public void setPortraitId(Integer portraitId) {
         this.portraitId = portraitId;
+    }
+
+    public List<String> getList() {
+        return list;
+    }
+
+    public void setList(List<String> list) {
+        this.list = list;
     }
 }

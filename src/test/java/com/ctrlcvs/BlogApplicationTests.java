@@ -1,15 +1,33 @@
 package com.ctrlcvs;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.ctrlcvs.excel.user;
+import com.ctrlcvs.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -70,6 +88,26 @@ public class BlogApplicationTests {
 
     @Test
     public void ttt() {
+        List<String> list = new ArrayList<>();
+        list.add("小陶");
+        list.add("小花");
+        ExpressionParser parser = new SpelExpressionParser();
+        StandardEvaluationContext context = new StandardEvaluationContext();
+        // TODO 将object 放进context
+        context.setVariable("message", list);
+        List value = parser.parseExpression("#message").getValue(context, List.class);
+        value.forEach(System.out::println);
+    }
+
+    @Test
+    public void method() throws IOException {
+        String str = "小陶1";
+        if (str.contains("1")) {
+            str += "haha";
+        } else if (str.contains("花花")) {
+            str += "huahua";
+        }
+        System.out.println(str);
     }
 
 }

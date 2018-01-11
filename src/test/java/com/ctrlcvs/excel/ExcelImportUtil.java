@@ -76,7 +76,7 @@ public class ExcelImportUtil {
                     String value = getStringCellValue(cell);
                     fields.stream()
                             .filter(u -> u.isAnnotationPresent(Excel.class)
-                                    && value.equals(u.getAnnotation(Excel.class).value()))
+                                    && value.matches(u.getAnnotation(Excel.class).value()))
                             .forEach(f -> {
                                 keyMap.put(cell.getColumnIndex(), f.getName());
                                 colMap.put(f.getName(), cell.getColumnIndex());
@@ -98,6 +98,7 @@ public class ExcelImportUtil {
                 }
                 // 初始化对象
                 T model = clazz.newInstance();
+                // TODO 校验数据 如果校验有异常 直接返回 不需要反射
                 // 导入数据到model，并校验要求
                 List<ExcelException> exceptions = BeanRefUtil.setFieldValue(row.getRowNum(), model,
                         fields, valMap, colMap);
@@ -117,7 +118,7 @@ public class ExcelImportUtil {
      * @return Excel
      * @throws Exception 异常
      */
-    private static Workbook getHssfOrXssfWorkBook(String filePath) throws Exception {
+    public static Workbook getHssfOrXssfWorkBook(String filePath) throws Exception {
         File file = new File(filePath);
         if (!file.exists()) {
             throw new Exception("文件不存在 ");
@@ -137,7 +138,7 @@ public class ExcelImportUtil {
      * @param cell 单元格
      * @return 字符串类型的数据
      */
-    private static String getStringCellValue(Cell cell) {
+    public static String getStringCellValue(Cell cell) {
         String strCell = "";
         if (null != cell) {
             CellType cellType = cell.getCellTypeEnum();
